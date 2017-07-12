@@ -1,0 +1,19 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "description": "Learn webpack with documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/luAr26/learn-webpack.git"
+  },
+  "author": "luAr26",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luAr26/learn-webpack/issues"
+  },
+  "homepage": "https://github.com/luAr26/learn-webpack#readme"
+}
