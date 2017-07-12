@@ -18243,8 +18243,7 @@ function component() {
 
 function createIcon(iconClass) {
   const iconElement = document.createElement('i');
-  iconElement.classList.add('fa');
-  iconElement.classList.add(iconClass);
+  iconElement.className = 'fa ' + iconClass;
   return iconElement;
 }
 
@@ -18253,7 +18252,7 @@ console.log(__WEBPACK_IMPORTED_MODULE_4__data_insurance_csv___default.a);
 console.log('102 Fahrenheit is: ', fahrenheitToCelsius(102), 'C');
 
 document.body.appendChild(component());
-document.body.appendChild(createIcon('fa-address-book'));
+document.body.appendChild(createIcon('fa-ambulance'));
 
 /***/ }),
 /* 23 */,
