@@ -4,4 +4,6 @@ Learn Webpack by reading the official documentation.
 
 `npm install`
 
-`http-server ./dist -p 3000`
+`npm run start`
+
+Go to `http://localhost:3000`
