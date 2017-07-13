@@ -1,4 +1,4 @@
-# Learn Webpack
+# Learn Webpack!
 
 Learn Webpack by reading the official documentation.
 
