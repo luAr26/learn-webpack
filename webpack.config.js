@@ -1,16 +1,15 @@
 const
   path = require('path'),
-  htmlWebpackPlugin = require('html-webpack-plugin'),
-  webpack = require('webpack');
+  htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: "cheap-eval-source-map",
   entry: {
-    app: './src/index.js',
-    another: './src/another-module.js'
+    app: './src/index.js'
   },
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -22,9 +21,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new htmlWebpackPlugin({title: 'Code splitting'}),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common'
-    })
+    new htmlWebpackPlugin({title: 'Code splitting - dynamic imports'})
   ]
 };

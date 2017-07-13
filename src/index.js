@@ -1,20 +1,13 @@
-import _ from 'lodash';
-import printMe from './another-module';
 import './style.sass';
 
-function fahrenheitToCelsius(fahrenheitTemp) {
-  return Math.round((fahrenheitTemp - 32) * 5 /9);
+function getComponent() {
+  return import(/*webpackChunkName: 'lodash'*/ 'lodash').then(_ => {
+    const element = document.createElement('div');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    return element;
+  }).catch(error => 'An error occurred while loading the component');
 }
 
-function component() {
-  const element = document.createElement('div');
-  const button = document.createElement('button');
-  element.innerHTML = _.join(['Hello', 'webpack', '!!!!!'], ' ');
-  button.innerHTML = 'Click and check console';
-  button.onclick = printMe;
-  element.appendChild(button);
-  return element;
-}
-
-document.body.appendChild(component());
-console.log('85 Fahrenheit is: ', fahrenheitToCelsius(85), 'C');
+getComponent().then(component => {
+  document.body.appendChild(component);
+});
