@@ -1,14 +1,13 @@
 const
   path = require('path'),
   htmlWebpackPlugin = require('html-webpack-plugin'),
-  cleanWebpackPlugin = require('clean-webpack-plugin'),
   webpack = require('webpack');
 
 module.exports = {
   devtool: "cheap-eval-source-map",
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    another: './src/another-module.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -23,12 +22,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new cleanWebpackPlugin(['dist']),
-    new htmlWebpackPlugin({title: 'Development'})
-  ],
-  devServer: {
-    hot: true,
-    contentBase: path.resolve(__dirname, 'dist')
-  }
+    new htmlWebpackPlugin({title: 'Code splitting'}),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
+    })
+  ]
 };

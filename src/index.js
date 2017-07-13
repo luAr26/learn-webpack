@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import printMe from './print';
-import Library from './library';
+import printMe from './another-module';
 import './style.sass';
 
 function fahrenheitToCelsius(fahrenheitTemp) {
@@ -17,14 +16,5 @@ function component() {
   return element;
 }
 
-if (module.hot) {
-  module.hot.accept('./library', () => {
-    console.log('Accepted the updated library module!');
-    Library.log();
-  });
-}
-
 document.body.appendChild(component());
 console.log('85 Fahrenheit is: ', fahrenheitToCelsius(85), 'C');
-console.log('it works');
-console.log('shit it doesn\'t work!');
