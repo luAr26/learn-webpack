@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/luAr26/learn-webpack#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "csv-loader": "^2.1.1",
     "file-loader": "^0.11.2",
     "font-awesome-webpack": "0.0.5-beta.2",
+    "html-webpack-plugin": "^2.29.0",
     "less": "^2.7.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",

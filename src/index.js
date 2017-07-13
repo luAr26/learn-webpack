@@ -1,9 +1,5 @@
 import _ from 'lodash';
-import './style.sass';
-import Icon from './images/icon_1x.png';
-require("font-awesome-webpack");
-import xmlData from './data/data.xml';
-import csvData from './data/insurance.csv';
+import printMe from './print';
 
 function fahrenheitToCelsius(fahrenheitTemp) {
   return Math.round((fahrenheitTemp - 32) * 5 /9);
@@ -11,24 +7,13 @@ function fahrenheitToCelsius(fahrenheitTemp) {
 
 function component() {
   const element = document.createElement('div');
+  const button = document.createElement('button');
   element.innerHTML = _.join(['Hello', 'webpack', '!!!!!'], ' ');
-  element.classList.add('hello');
-  // Add the image
-  const myIcon = new Image();
-  myIcon.src = Icon;
-  element.appendChild(myIcon);
+  button.innerHTML = 'Click and check console';
+  button.onclick = printMe;
+  element.appendChild(button);
   return element;
 }
 
-function createIcon(iconClass) {
-  const iconElement = document.createElement('i');
-  iconElement.className = 'fa ' + iconClass;
-  return iconElement;
-}
-
-console.log('XML: ', xmlData.note.body.toString());
-console.log(csvData);
-console.log('102 Fahrenheit is: ', fahrenheitToCelsius(102), 'C');
-
 document.body.appendChild(component());
-document.body.appendChild(createIcon('fa-ambulance'));
+console.log('85 Fahrenheit is: ', fahrenheitToCelsius(85), 'C');
