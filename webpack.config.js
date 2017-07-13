@@ -21,6 +21,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new htmlWebpackPlugin({title: 'Code splitting - dynamic imports'})
+    new htmlWebpackPlugin({title: 'Lazy loading'})
   ]
 };
